@@ -1,2 +1,12 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, 'home page') %>
+<div class="center hero-unit">
+<h1>header</h1>
+<h2>home page for bacon roll app</h2>
+
+
+<%= link_to "create order", createorder_path, class: "btn btn-custom" %>
+<%= link_to "view orders", '#', class: "btn btn-custom"  %>
+
+</div>
+
+<!-- <%= link_to image_tag("rails.png", alt: "powered by rails"), 'http://rubyonrails.org/' %> -->
