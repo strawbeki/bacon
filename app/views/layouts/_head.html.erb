@@ -1,12 +1,13 @@
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
+          <%= image_tag("http://24.media.tumblr.com/tumblr_m60msaeRsf1qcq7qdo1_100.png", id: "symbol") %>
           <%= link_to "bacon", root_path, id: "symbol" %>
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "home",    root_path %></li>
-              <li><%= link_to "create order",    createorder_path %></li>
-              <li><%= link_to "view orders",    '#' %></li>
+              <li><%= link_to "create order",    ordering_path %></li>
+              <li><%= link_to "view orders",    orders_path %></li>
             </ul>
           </nav>
         </div>

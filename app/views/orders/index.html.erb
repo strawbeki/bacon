@@ -1,0 +1,11 @@
+<% provide(:title, 'all orders') %>
+<h1>list of orders</h1>
+
+
+<ul class="orders">
+  <% @orders.each do |order| %>
+    <li>
+      <%= link_to order.name, order %>
+    </li>
+  <% end %>
+</ul>

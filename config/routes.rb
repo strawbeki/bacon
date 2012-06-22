@@ -1,9 +1,13 @@
 Bacon::Application.routes.draw do
-  get "orders/new"
+
+  resources :orders
+  resources :fillings
 
   root to: 'static_pages#home'
 
-  match '/createorder', to: 'orders#new'
+  match '/ordering',  to: 'orders#new'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

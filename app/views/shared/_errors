@@ -1,0 +1,12 @@
+<% if @order.errors.any? %>
+  <div id="error">
+    <div class="alert alert-error">
+    <%= pluralize(@order.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @order.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

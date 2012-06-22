@@ -4,11 +4,21 @@
 
 html {
   overflow-y: scroll;
+  color: #CBD5C3;
 }
 
+a:link {
+  text-decoration: none; 
+  color: #CBD5C3;
+}
+a:visited {text-decoration: none;}
+a:active {text-decoration: none;}
+a:hover {text-decoration: underline; color: #FF4A6E;}
+
 body {
-  padding-top: 10px;
+  padding-top: 60px;
   background-color: #28242B;
+  color: #CBD5C3;
 }
 
 section {
@@ -22,10 +32,12 @@ textarea {
 
 .center {
   text-align: center;
+
 }
 
 .center h1 {
   margin-bottom: 10px;
+
 }
 
 /* buttons and things */
@@ -48,6 +60,7 @@ textarea {
 
 .hero-unit {
 	background-color: #3E3A45; 
+  color: #CBD5C3;
 }
 
 /* logo stuff */
@@ -62,11 +75,13 @@ textarea {
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+
 }
 
 #symbol:hover {
   color: #FF4A6E;
   text-decoration: none;
+  margin-bottom: 0px;
 }
 
 /* typography */
@@ -93,25 +108,53 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 0.5em;
   line-height: 1.7em;
-}
-
-/* foot stuff */
-
-footer {
-
-  color: #555;
-}
-
-footer a {
   color: #CBD5C3;
-}  
-
-footer a:hover { 
-  color: #FF4A6E;
 }
 
-footer small {
-  float: left;
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  color: #000;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+label {
+    color: #FF4A6E;
+    text-transform: lowercase;
+    font-weight: bold;
+}
+
+#error {
+  color: #CBD5C3;
+  font-weight: bold;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  color: #000000;
+
+ }
+
+.orders {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid #CBD5C3;
+    &:last-child {
+      border-bottom: 1px solid #CBD5C3;
+    }
+  }
 }

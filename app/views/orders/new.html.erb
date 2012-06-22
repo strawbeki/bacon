@@ -1,6 +1,43 @@
 <% provide(:title, 'create an order') %>
-<div class="center hero-unit">
-<h1>place your order</h1>
-<h2>order creation page </h2>
 
+<h1>place your order</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+
+    <%= simple_form_for(@order) do |f| %>
+	    <%= render 'shared/errors' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+
+	  <%= label_tag(:roll, "kind of roll") %>
+	  white: <%= f.radio_button(:roll, 'white') %>	  
+	  brown: <%= f.radio_button(:roll, 'brown') %>
+	  seeded: <%= f.radio_button(:roll, 'seeded') %>
+
+	  <%= label_tag(:filling, "filling") %>
+	  bacon: <%= check_box_tag(:filling, 'bacon') %> 
+	  sausage: <%= check_box_tag(:filling,'sausage') %> 
+	  egg: <%= check_box_tag(:filling,'egg') %> 
+	  black pudding: <%= check_box_tag(:filling, 'black pudding') %>
+	  lorne sausage: <%= check_box_tag(:filling, 'lorne sausage') %>
+	  blt: <%= check_box_tag(:filling, 'blt') %>	  
+	  cheese: <%= check_box_tag(:filling, 'cheese') %>
+	  mince: <%= check_box_tag(:filling, 'mince') %>
+	  steak and onion: <%= check_box_tag(:filling, 'steak and onion') %>
+	  
+	  <%= f.label :sauce %>
+      <%= f.text_field :sauce %><br>
+
+	  <%= f.label :notes %>
+      <%= f.text_field :notes %><br>
+
+      <br><br>
+      <%= f.submit "place order", class: "btn btn-custom" %>
+
+    <% end %>
+
+
+</div>
 </div>
