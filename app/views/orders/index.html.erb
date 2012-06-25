@@ -1,11 +1,52 @@
 <% provide(:title, 'all orders') %>
 <h1>list of orders</h1>
+<div class="center hero-unit">
+<table>
+	<tr>
+<td><b><u>Name</u></b></td> 
+<td><b><u>Roll</u></b></td> 
+<td><b><u>Filling</u></b></td> 
+<td><b><u>Sauce</u></b></td> 
+<td><b><u>Notes</u></b></td></b>
+<td><b><u>Options</u></b></td></b>
+</tr>
 
+	<tr>
 
 <ul class="orders">
   <% @orders.each do |order| %>
-    <li>
-      <%= link_to order.name, order %>
-    </li>
+      <td><%= link_to order.name, order %> </td>
+      
+
+      <td><%= order.roll %> </td>
+
+	    
+  	  <td><%= order.filling %></td>
+  	 
+
+      <td><% if order.sauce.empty? %>
+	      ---
+      <% else %>
+  	  <%= order.sauce %>
+  	  <% end %></td>
+
+      <td><% if order.notes.empty? %>
+	       ---
+      <% else %>
+  	  <%= order.notes %>
+  	  <% end %></td>
+
+  	  <td>
+  	  	<%= link_to 'delete?', order, method: :delete, data: { confirm: "You sure?" } %>
+        <%= link_to 'edit?', edit_order_path(order.id) %>
+
+
+  	  </td>
+
+</tr>
+
   <% end %>
 </ul>
+</div>
+
+

@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span6 offset3">
 
-    <%= simple_form_for(@order) do |f| %>
+    <%= form_for(@order) do |f| %>
       <%= render 'shared/errors' %>
 
       <%= f.label :name %>
@@ -16,15 +16,16 @@
     seeded: <%= f.radio_button(:roll, 'seeded') %>
 
     <%= label_tag(:filling, "filling") %>
-    bacon: <%= check_box_tag(:filling, 'bacon') %> 
-    sausage: <%= check_box_tag(:filling,'sausage') %> 
-    egg: <%= check_box_tag(:filling,'egg') %> 
-    black pudding: <%= check_box_tag(:filling, 'black pudding') %>
-    lorne sausage: <%= check_box_tag(:filling, 'lorne sausage') %>
-    blt: <%= check_box_tag(:filling, 'blt') %>    
-    cheese: <%= check_box_tag(:filling, 'cheese') %>
-    mince: <%= check_box_tag(:filling, 'mince') %>
-    steak and onion: <%= check_box_tag(:filling, 'steak and onion') %>
+    bacon: <%= check_box_tag("filling[]", 'bacon') %> 
+    sausage: <%= check_box_tag(:"filling[]",'sausage') %> 
+    egg: <%= check_box_tag(:"filling[]",'egg') %> 
+    black pudding: <%= check_box_tag(:"filling[]", 'black pudding') %>
+    lorne sausage: <%= check_box_tag(:"filling[]", 'lorne sausage') %>
+    blt: <%= check_box_tag(:"filling[]", 'blt') %>    
+    cheese: <%= check_box_tag(:"filling[]", 'cheese') %>
+    mince: <%= check_box_tag(:"filling[]", 'mince') %>
+    steak and onion: <%= check_box_tag(:"filling[]", 'steak & onion') %>
+    
     
     <%= f.label :sauce %>
       <%= f.text_field :sauce %><br>
@@ -37,3 +38,4 @@
 
   </div>
 </div>
+<% end %>

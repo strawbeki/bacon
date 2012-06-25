@@ -5,3 +5,6 @@ Roll: <%= @order.roll %><br>
 Filling: <%= @order.filling %><br>
 Sauces: <%= @order.sauce %><br>
 Notes (if any): <%= @order.notes %>
+<br><br>
+
+<%= link_to "delete order?", @order, method: :delete, data: { confirm: "You sure?" } %>
