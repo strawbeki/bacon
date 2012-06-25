@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
 
   validates :name, presence: true
   validates :roll, presence: true
-  validates :filling, presence: true
+ # validates :filling, presence: true
 
 
 end

@@ -7,4 +7,5 @@ Sauces: <%= @order.sauce %><br>
 Notes (if any): <%= @order.notes %>
 <br><br>
 
-<%= link_to "delete order?", @order, method: :delete, data: { confirm: "You sure?" } %>
+<%= link_to 'edit your order?', edit_order_path(@order.id) %><br>
+<%= link_to "delete order?", @order, method: :delete, data: { confirm: "You sure? If this isn't your order you might start a WAR." } %>

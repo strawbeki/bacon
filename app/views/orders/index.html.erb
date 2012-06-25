@@ -37,8 +37,9 @@
   	  <% end %></td>
 
   	  <td>
-  	  	<%= link_to 'delete?', order, method: :delete, data: { confirm: "You sure?" } %>
-        <%= link_to 'edit?', edit_order_path(order.id) %>
+  	  	<%= link_to 'edit?', edit_order_path(order.id) %>
+        <%= link_to 'delete?', order, method: :delete, data: { confirm: "You sure? If this isn't your order you might start a WAR." } %>
+        
 
 
   	  </td>
