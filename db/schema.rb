@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120622090014) do
 
-  create_table "order", :force => true do |t|
-    t.string   "name"
-    t.string   "roll"
-    t.string   "filling"
-    t.string   "sauce"
-    t.text     "notes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "orders", :force => true do |t|
     t.string   "name"
     t.string   "roll"

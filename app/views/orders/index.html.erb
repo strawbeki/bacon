@@ -1,14 +1,19 @@
 <% provide(:title, 'all orders') %>
+
 <h1>list of orders</h1>
+<%= link_to 'delete all?', @order, method: :destroy_all, data: { confirm: "You sure?" }, class: "btn btn-custom"%>
 <div class="center hero-unit">
+<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 <table>
 	<tr>
-<td><b><u>Name</u></b></td> 
-<td><b><u>Roll</u></b></td> 
-<td><b><u>Filling</u></b></td> 
-<td><b><u>Sauce</u></b></td> 
-<td><b><u>Notes</u></b></td></b>
-<td><b><u>Options</u></b></td></b>
+<th>Name</th> 
+<th>Roll</th>
+<th>Filling</th>
+<th>Sauce</th>
+<th>Notes</th>
+<th>Options</th>
 </tr>
 
 	<tr>
@@ -47,7 +52,7 @@
 </tr>
 
   <% end %>
+
 </ul>
+
 </div>
-
-

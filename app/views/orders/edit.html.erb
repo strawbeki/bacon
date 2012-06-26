@@ -11,27 +11,26 @@
       <%= f.text_field :name %><br>
 
     <%= label_tag(:roll, "kind of roll") %>
-    white: <%= f.radio_button(:roll, 'white') %>    
-    brown: <%= f.radio_button(:roll, 'brown') %>
-    seeded: <%= f.radio_button(:roll, 'seeded') %>
+      white: <%= f.radio_button(:roll, 'white') %>    
+      brown: <%= f.radio_button(:roll, 'brown') %>
+      seeded: <%= f.radio_button(:roll, 'seeded') %>
 
     <%= label_tag(:filling, "filling") %>
-    bacon: <%= check_box_tag("filling[]", 'bacon') %> 
-    sausage: <%= check_box_tag(:"filling[]",'sausage') %> 
-    egg: <%= check_box_tag(:"filling[]",'egg') %> 
-    black pudding: <%= check_box_tag(:"filling[]", 'black pudding') %>
-    lorne sausage: <%= check_box_tag(:"filling[]", 'lorne sausage') %>
-    blt: <%= check_box_tag(:"filling[]", 'blt') %>    
-    cheese: <%= check_box_tag(:"filling[]", 'cheese') %>
-    mince: <%= check_box_tag(:"filling[]", 'mince') %>
-    steak and onion: <%= check_box_tag(:"filling[]", 'steak & onion') %>
-    
-    
+     <%= check_box_tag("filling[]", 'bacon') %> bacon <br>
+     <%= check_box_tag(:"filling[]",'sausage') %> sausage <br>
+     <%= check_box_tag(:"filling[]",'egg') %> egg <br>
+     <%= check_box_tag(:"filling[]", 'black pudding') %> black pudding <br>
+     <%= check_box_tag(:"filling[]", 'lorne sausage') %> lorne sausage <br>
+     <%= check_box_tag(:"filling[]", 'blt') %> blt <br>
+     <%= check_box_tag(:"filling[]", 'cheese') %> cheese <br>
+     <%= check_box_tag(:"filling[]", 'mince') %> mince <br>
+     <%= check_box_tag(:"filling[]", 'steak & onion') %> steak and onion <br>
+   
     <%= f.label :sauce %>
-      <%= f.text_field :sauce %><br>
+      <%= f.text_field :sauce, :maxlength => 140 %><br>
 
     <%= f.label :notes %>
-      <%= f.text_field :notes %><br>
+      <%= f.text_field :notes, :maxlength => 140 %><br>
 
      <br><br>
       <%= f.submit "save changes", class: "btn btn-custom" %>
