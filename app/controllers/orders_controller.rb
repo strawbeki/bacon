@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   
+
   def show
-  @orders = Order.where('start BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
-  #@order = Order.find(params[:id])
+  @order = Order.find(params[:id])
 
   end
 
@@ -13,6 +13,11 @@ class OrdersController < ApplicationController
 
   redirect_to root_url, :notice => "all orders destroyed!"
 
+  end
+
+  def today_order
+    @order = Order.find(params[:created_at => Date.today])
+    
   end
 
 
@@ -35,7 +40,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-  	@orders = Order.all
+    @orders = Order.all
 
   end
 
