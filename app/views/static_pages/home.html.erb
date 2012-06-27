@@ -1,5 +1,8 @@
 <% provide(:title, 'home page') %>
 <div class="center hero-unit">
+<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 <h1>yoyo games</h1>
 <h2>home page for bacon roll app</h2>
 
@@ -7,6 +10,8 @@
 <br>
 <%= link_to "create order", ordering_path, class: "btn btn-custom" %>
 <%= link_to "view orders", orders_path, class: "btn btn-custom"  %>
+
+
 
 
 </div>

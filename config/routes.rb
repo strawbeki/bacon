@@ -5,7 +5,7 @@ Bacon::Application.routes.draw do
   root to: 'static_pages#home'
 
   match '/ordering',  to: 'orders#new'
-
+  match '/deleteall', to: 'orders#destroy_all'
  
 
 

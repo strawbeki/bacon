@@ -1,0 +1,5 @@
+<%= link_to 'delete all?', orders, method: :destroy_all, data: { confirm: "You sure?" }, class: "btn btn-custom"%>
+
+
+
+<%= link_to 'delete all?', root_path(Order.delete_all), data: { confirm: "You sure?" }, class: "btn btn-custom"%>

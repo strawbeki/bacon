@@ -1,18 +1,17 @@
 class OrdersController < ApplicationController
   
   def show
-  #@order = Order.find(params["created_at >= ?", today])
-
-  @order = Order.find(params[:id])
-
+  @orders = Order.where('start BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+  #@order = Order.find(params[:id])
 
   end
 
   def destroy_all
-  #Order.all.map(&:destroy) 
-  @order = Order.all
-  @order = destroy _all
-  redirect_to orders_path, :notice => "all orders destroyed!"
+  Order.all.each do |order|
+    order.destroy
+  end
+
+  redirect_to root_url, :notice => "all orders destroyed!"
 
   end
 
@@ -22,8 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-      @order = Order.find(params[:id])
-
+    @order = Order.find(params[:id])
   end
 
   def update
@@ -38,7 +36,7 @@ class OrdersController < ApplicationController
 
   def index
   	@orders = Order.all
-    
+
   end
 
   def destroy
@@ -51,6 +49,7 @@ def create
 
     @order = Order.new(params[:order])
     @order.filling = params[:filling].join(", ")
+
  
     if @order.save
       redirect_to orders_path, :notice => "order created!"
