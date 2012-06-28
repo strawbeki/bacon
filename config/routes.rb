@@ -6,6 +6,8 @@ Bacon::Application.routes.draw do
 
   match '/ordering',  to: 'orders#new'
   match '/deleteall', to: 'orders#destroy_all'
+  match '/today', to: 'orders#today'
+
  
 
 

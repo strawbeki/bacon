@@ -15,12 +15,6 @@ class OrdersController < ApplicationController
 
   end
 
-  def today_order
-    @order = Order.find(params[:created_at => Date.today])
-    
-  end
-
-
   def new
     @order = Order.new
   end
@@ -33,7 +27,7 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
       @order.filling = params[:filling].join(", ")
       if @order.update_attributes(params[:order])
-      redirect_to orders_path, :notice => "order updated!"
+      redirect_to today_path, :notice => "order updated!"
       else
       render 'edit'
       end
@@ -41,13 +35,20 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-
   end
+
+  def today
+    today = Date.today 
+    @orders = Order.find(:all, :conditions => ["created_at >= ?", today])
+  end
+
+
+
 
   def destroy
     Order.find(params[:id]).destroy
     
-    redirect_to orders_path, :notice => "order deleted!"
+    redirect_to root_url, :notice => "order deleted!"
   end
 
 def create
@@ -57,7 +58,7 @@ def create
 
  
     if @order.save
-      redirect_to orders_path, :notice => "order created!"
+      redirect_to today_path, :notice => "order created!"
     else
       render 'new'
     end
